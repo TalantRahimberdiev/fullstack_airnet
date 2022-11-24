@@ -10,16 +10,14 @@ export default function UpdateForm({ task, task_id }) {
    const { user } = useParams()
    const [text, setText] = useState(task.description)
    const [checked, setChecked] = useState(task.completed)
-
    const navigate = useNavigate()
    const [updateTask] = useUpdateTaskMutation()
-
    const time = useSelector(state => state.reducer_2.time)
+   
    const monthes = 'January February March April May June July August September October November December'.split(' ')
    const currentMonth = monthes.indexOf(time.month) + 1 < 10 ? '0' + (monthes.indexOf(time.month) + 1) : monthes.indexOf(time.month) + 1, currentDay = time.day < 10 ? '0' + time.day : time.day
    const transfered = time.year + '-' + currentMonth + '-' + currentDay
-
-
+   
    const update = async () => {
       const task = {
          details: task_id,
