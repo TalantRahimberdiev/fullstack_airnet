@@ -5,7 +5,6 @@ const initialState = {
    language: 'eng',
    opened: false,
 }
-
 export const slice_1 = createSlice({
    name: 'burger_language',
    initialState,
