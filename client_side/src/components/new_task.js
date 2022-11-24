@@ -5,17 +5,15 @@ import { useSelector } from "react-redux"
 import { useAddTaskMutation } from "../rtk/API"
 import { useNavigate } from "react-router-dom"
 
-
 export default function NewTask() {
 
    const navigate = useNavigate()
-
    const [text, setText] = useState('')
    const [checked, setChecked] = useState(false)
    const id = useSelector(state => state.reducer_2.user.user_id)
    const user = useSelector(state => state.reducer_2.user)
-
    const time = useSelector(state => state.reducer_2.time)
+   
    const monthes = 'January February March April May June July August September October November December'.split(' ')
    const currentMonth = monthes.indexOf(time.month) + 1 < 10 ? '0' + (monthes.indexOf(time.month) + 1) : monthes.indexOf(time.month) + 1, currentDay = time.day < 10 ? '0' + time.day : time.day
    const transfered = time.year + '-' + currentMonth + '-' + currentDay
